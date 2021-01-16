@@ -71,4 +71,17 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" File explorer
+autocmd VimEnter *
+  \ if !argc()
+  \| NERDTree
+  \| wincmd p 
+
+" Terminal
+autocmd VimEnter *
+  \ if !argc()
+  \| vertical botright terminal
+autocmd VimEnter *
+  \ if !argc()
+  \| wincmd p
 
