@@ -38,11 +38,11 @@ Plug 'sheerun/vim-polyglot'
 " Git support
 Plug 'tpope/vim-fugitive'
 
-" Status line
-Plug 'vim-airline/vim-airline'
-
 " Colour scheme
 Plug 'w0ng/vim-hybrid'
+
+" Dim inactive buffers
+Plug 'TaDaa/vimade'
 
 " Initialize plugin system
 call plug#end()
@@ -52,6 +52,11 @@ autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | q
   \| endif
+
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+set laststatus=2
 
 " End plugin section
 
